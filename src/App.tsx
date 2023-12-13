@@ -8,9 +8,10 @@ function App() {
   return (
     <MainLayout>
       <Routes>
-        <Route path="/" element={<Navigate to="/player" />} />
-        <Route path="/player" Component={PlayerPage} />
-        <Route path="/maintainer" Component={MaintainerPage} />
+        <Route path="/" element={<Navigate to="/lottokeeper/player" />} />
+        <Route path="/lottokeeper" element={<Navigate to="/lottokeeper/player" />} />
+        <Route path="/lottokeeper/player" Component={PlayerPage} />
+        <Route path="/lottokeeper/maintainer" Component={MaintainerPage} />
       </Routes>
     </MainLayout>
   );

@@ -7,8 +7,8 @@ import { getEntity, saveEntity } from '../lib/utils';
 import { Maintainer } from '../hooks/useMaintainer';
 
 const buttons = [
-  { label: 'Játékos', activePath: '/player' },
-  { label: 'Üzemeltető', activePath: '/maintainer' },
+  { label: 'Játékos', activePath: '/lottokeeper/player' },
+  { label: 'Üzemeltető', activePath: '/lottokeeper/maintainer' },
 ];
 
 function MainLayout({ children }: React.PropsWithChildren<unknown>): JSX.Element | null {
