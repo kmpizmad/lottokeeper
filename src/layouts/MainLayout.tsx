@@ -34,7 +34,7 @@ function MainLayout({ children }: React.PropsWithChildren<unknown>): JSX.Element
                 if (player) saveEntity<Player>('player', { ...player, tickets: [] });
                 const maintainer = getEntity<Maintainer>('maintainer');
                 if (maintainer) saveEntity<Maintainer>('maintainer', { ...maintainer, tickets: [] });
-                navigate(0);
+                navigate('/');
               }}
             >
               Új kör
@@ -45,7 +45,7 @@ function MainLayout({ children }: React.PropsWithChildren<unknown>): JSX.Element
               onClick={() => {
                 window.localStorage.removeItem('player');
                 window.localStorage.removeItem('maintainer');
-                navigate(0);
+                navigate('/');
               }}
             >
               Visszaállítás
