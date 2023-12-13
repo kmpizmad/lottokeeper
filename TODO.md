@@ -1,0 +1,2 @@
+- [ ] Move static values to env variables
+- [ ] Optimize array handling
