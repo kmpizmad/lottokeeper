@@ -1,7 +1,7 @@
 import './MainLayout.css';
 import Button from '@mui/material/Button';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Player } from '../hooks/usePlayer';
 import { getEntity, saveEntity } from '../lib/utils';
 import { Maintainer } from '../hooks/useMaintainer';
@@ -12,6 +12,8 @@ const buttons = [
 ];
 
 function MainLayout({ children }: React.PropsWithChildren<unknown>): JSX.Element | null {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full h-screen">
       <header className="p-4 bg-gray-900">
@@ -32,7 +34,7 @@ function MainLayout({ children }: React.PropsWithChildren<unknown>): JSX.Element
                 if (player) saveEntity<Player>('player', { ...player, tickets: [] });
                 const maintainer = getEntity<Maintainer>('maintainer');
                 if (maintainer) saveEntity<Maintainer>('maintainer', { ...maintainer, tickets: [] });
-                window.location.reload();
+                navigate(0);
               }}
             >
               Új kör
@@ -43,7 +45,7 @@ function MainLayout({ children }: React.PropsWithChildren<unknown>): JSX.Element
               onClick={() => {
                 window.localStorage.removeItem('player');
                 window.localStorage.removeItem('maintainer');
-                window.location.reload();
+                navigate(0);
               }}
             >
               Visszaállítás
