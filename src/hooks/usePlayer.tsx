@@ -5,7 +5,6 @@ const defaultPlayer: Player = {
   name: '',
   budget: 10000,
   tickets: [],
-  winnings: { tickets: [], value: 0 },
 };
 
 function usePlayer() {
@@ -52,10 +51,6 @@ export type Player = {
   name: string;
   budget: number;
   tickets: number[][];
-  winnings: {
-    tickets: number[][];
-    value: number;
-  };
 };
 
 type State = Player;

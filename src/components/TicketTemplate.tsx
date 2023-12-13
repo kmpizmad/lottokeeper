@@ -52,7 +52,7 @@ export function NewTicket({ id, onBuyTicket, onCancelTicket }: NewTicketProps): 
           color="primary"
           variant="contained"
           disabled={selection.length !== 5}
-          onClick={() => onBuyTicket([...selection].sort((a, b) => a - b) as [number, number, number, number, number])}
+          onClick={() => onBuyTicket(selection.toSorted((a, b) => a - b) as [number, number, number, number, number])}
         >
           {selection.length === 5 ? 'Megveszem' : `Még ${5 - selection.length} db számot ki kell választanod`}
         </Button>

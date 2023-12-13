@@ -13,7 +13,7 @@ export function createTicket(sorted: boolean = false): [number, number, number, 
     i++;
   }
 
-  return (sorted ? numbers.sort((a, b) => a - b) : numbers) as [number, number, number, number, number];
+  return (sorted ? numbers.toSorted((a, b) => a - b) : numbers) as [number, number, number, number, number];
 }
 
 export function countWinners(
